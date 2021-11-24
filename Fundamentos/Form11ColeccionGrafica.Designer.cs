@@ -39,6 +39,8 @@ namespace Fundamentos
             this.btnLimpiarLista = new System.Windows.Forms.Button();
             this.lblPosicion = new System.Windows.Forms.Label();
             this.lblSeleccionado = new System.Windows.Forms.Label();
+            this.btnSubir = new System.Windows.Forms.Button();
+            this.btnBajar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -58,6 +60,7 @@ namespace Fundamentos
             this.lstElementos.Name = "lstElementos";
             this.lstElementos.Size = new System.Drawing.Size(238, 263);
             this.lstElementos.TabIndex = 1;
+            this.lstElementos.SelectedIndexChanged += new System.EventHandler(this.lstElementos_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -83,6 +86,8 @@ namespace Fundamentos
             this.btnInsertar.TabIndex = 4;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Visible = false;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnModificar
             // 
@@ -92,6 +97,8 @@ namespace Fundamentos
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Visible = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -103,6 +110,8 @@ namespace Fundamentos
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiarLista
             // 
@@ -114,6 +123,8 @@ namespace Fundamentos
             this.btnLimpiarLista.TabIndex = 7;
             this.btnLimpiarLista.Text = "Limpiar lista";
             this.btnLimpiarLista.UseVisualStyleBackColor = false;
+            this.btnLimpiarLista.Visible = false;
+            this.btnLimpiarLista.Click += new System.EventHandler(this.btnLimpiarLista_Click);
             // 
             // lblPosicion
             // 
@@ -133,11 +144,33 @@ namespace Fundamentos
             this.lblSeleccionado.TabIndex = 9;
             this.lblSeleccionado.Text = "lblSeleccionado";
             // 
+            // btnSubir
+            // 
+            this.btnSubir.Location = new System.Drawing.Point(352, 99);
+            this.btnSubir.Name = "btnSubir";
+            this.btnSubir.Size = new System.Drawing.Size(275, 47);
+            this.btnSubir.TabIndex = 10;
+            this.btnSubir.Text = "Subir";
+            this.btnSubir.UseVisualStyleBackColor = true;
+            this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
+            // 
+            // btnBajar
+            // 
+            this.btnBajar.Location = new System.Drawing.Point(352, 157);
+            this.btnBajar.Name = "btnBajar";
+            this.btnBajar.Size = new System.Drawing.Size(275, 47);
+            this.btnBajar.TabIndex = 11;
+            this.btnBajar.Text = "Bajar";
+            this.btnBajar.UseVisualStyleBackColor = true;
+            this.btnBajar.Click += new System.EventHandler(this.btnBajar_Click);
+            // 
             // Form11ColeccionGrafica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 438);
+            this.ClientSize = new System.Drawing.Size(679, 505);
+            this.Controls.Add(this.btnBajar);
+            this.Controls.Add(this.btnSubir);
             this.Controls.Add(this.lblSeleccionado);
             this.Controls.Add(this.lblPosicion);
             this.Controls.Add(this.btnLimpiarLista);
@@ -169,5 +202,7 @@ namespace Fundamentos
         private System.Windows.Forms.Button btnLimpiarLista;
         private System.Windows.Forms.Label lblPosicion;
         private System.Windows.Forms.Label lblSeleccionado;
+        private System.Windows.Forms.Button btnSubir;
+        private System.Windows.Forms.Button btnBajar;
     }
 }
