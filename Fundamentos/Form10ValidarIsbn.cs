@@ -15,6 +15,23 @@ namespace Fundamentos
         public Form10ValidarIsbn()
         {
             InitializeComponent();
+            int[] numeros = new int[4] { 14, 999, 222, 333 };
+            int suma = 0;
+            foreach (int num in numeros)
+            {
+                suma += num;
+            }
+            this.lblResultado.Text = suma.ToString();
+
+            foreach (Form f in this.OwnedForms)
+            {
+                f.Text = "Que eres???";
+            }
+
+            foreach (Control c in this.Controls)
+            {
+                c.BackColor = Color.Yellow;
+            }
         }
 
         private void btnValidarISBN_Click(object sender, EventArgs e)
