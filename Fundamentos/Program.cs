@@ -17,7 +17,7 @@ namespace Fundamentos
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form03CambiarForm());
+            Application.Run(new Form10ValidarIsbn());
         }
     }
 }
