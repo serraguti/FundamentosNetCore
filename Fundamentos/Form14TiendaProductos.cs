@@ -34,14 +34,19 @@ namespace Fundamentos
             this.txtProducto.Focus();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        void EliminarSeleccionados()
         {
             int numeroElementos = this.lstTienda.SelectedIndices.Count - 1;
-            for (int i = numeroElementos; i >=0; i--)
+            for (int i = numeroElementos; i >= 0; i--)
             {
                 int indice = this.lstTienda.SelectedIndices[i];
                 this.lstTienda.Items.RemoveAt(indice);
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            this.EliminarSeleccionados();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -65,16 +70,22 @@ namespace Fundamentos
             {
                 this.lstAlmacen.Items.Add(producto);
             }
-            int numeroElementos = this.lstTienda.SelectedIndices.Count - 1;
-            for (int i = numeroElementos; i >= 0; i--)
-            {
-                int indice = this.lstTienda.SelectedIndices[i];
-                this.lstTienda.Items.RemoveAt(indice);
-            }
+            this.EliminarSeleccionados();
         }
+
+
+        int SumarNumeros(int numero1, int numero2)
+        {
+            int suma = numero1 + numero2;
+            return suma;
+        }
+
+
 
         private void btnTodos_Click(object sender, EventArgs e)
         {
+            int resultado = this.SumarNumeros(8, 9);
+
             this.lstAlmacen.Items.AddRange(this.lstTienda.Items);
             this.lstTienda.Items.Clear();
         }
