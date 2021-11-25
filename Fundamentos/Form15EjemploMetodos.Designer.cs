@@ -132,6 +132,7 @@ namespace Fundamentos
             this.txtSoloLetras.Name = "txtSoloLetras";
             this.txtSoloLetras.Size = new System.Drawing.Size(265, 43);
             this.txtSoloLetras.TabIndex = 9;
+            this.txtSoloLetras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloLetras_KeyPress);
             // 
             // lblMouse
             // 

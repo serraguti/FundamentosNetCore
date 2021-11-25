@@ -15,6 +15,16 @@ namespace Fundamentos
         public Form15EjemploMetodos()
         {
             InitializeComponent();
+
+            CheckBox chk = new CheckBox();
+            chk.Checked = true;
+            Object obj = chk;
+            //LA FORMA ABSTRACTA (Object) NO CONTIENE
+            //LO QUE NECESITAMOS
+            ((CheckBox)obj).Checked = true;
+
+
+
         }
 
         void DobleNumero(int numero)
@@ -90,6 +100,16 @@ namespace Fundamentos
             char teclaborrar = (char)8;
             char teclaBack = (char)Keys.Back;
             if (char.IsDigit(e.KeyChar) == false && 
+                e.KeyChar != teclaBack)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSoloLetras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char teclaBack = (char)Keys.Back;
+            if (char.IsLetter(e.KeyChar) == false &&
                 e.KeyChar != teclaBack)
             {
                 e.Handled = true;
