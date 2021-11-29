@@ -17,7 +17,7 @@ namespace Fundamentos
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form22EjemploClases());
+            Application.Run(new Form24FilesNombres());
         }
     }
 }
